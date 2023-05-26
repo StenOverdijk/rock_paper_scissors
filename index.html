@@ -40,9 +40,7 @@
         const resultOuput = document.querySelector("#result");
 
         // Button elements
-        const steenBtn = document.querySelector("#steen");
-        const papierBtn = document.querySelector("#papier");
-        const schaarBtn = document.querySelector("#schaar");
+        const btns = document.querySelectorAll("button");
 
         // Variables
         let humanChoice = "";
@@ -83,9 +81,7 @@
         }
 
         // Button click events
-        steenBtn.addEventListener("click", humanMadeChoice);
-        papierBtn.addEventListener("click", humanMadeChoice);
-        schaarBtn.addEventListener("click", humanMadeChoice);
+        btns.forEach(btn => btn.addEventListener("click", humanMadeChoice));
 
     </script>
 </body>
