@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <div>
+        <h1>
+            Computer:
+            <span id="computer"></span>
+        </h1>
+    </div>
+    <div>
+        <h1>
+            Jouw Keuze:
+            <span id="human"></span>
+        </h1>
+    </div>
+    <div>
+        <h1>
+            Uitkomst:
+            <span id="result"></span>
+        </h1>
+    </div>
+    <div>
+        <button id="steen" type="button">Steen</button>
+        <button id="papier" type="button">Papier</button>
+        <button id="schaar"type="button">Schaar</button>
+    </div>
+
+    <script>
+        // Span elements
+        const computerOutput = document.querySelector("#computer");
+        const humanOutput = document.querySelector("#human");
+        const resultOuput = document.querySelector("#result");
+
+        // Button elements
+        const steenBtn = document.querySelector("#steen");
+        const papierBtn = document.querySelector("#papier");
+        const schaarBtn = document.querySelector("#schaar");
+
+        // Variables
+        let humanChoice = "";
+        let computerChoice = "";
+
+        // Initialize human output
+        humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuze!";
+        
+
+        // Button click events
+        steenBtn.addEventListener("click", function(event) {
+            humanChoice = event.target.id
+            humanOutput.innerHTML = humanChoice;
+            const randomNumber = Math.floor(Math.random() * 3) + 1;
+            if ( randomNumber === 1 ) {
+                computerChoice = 'steen';
+            }
+            if ( randomNumber === 2 ) {
+                computerChoice = 'schaar';
+            }
+            if ( randomNumber === 3 ) {
+                computerChoice = 'papier';
+            }
+            computerOutput.innerHTML = computerChoice;
+
+            if (humanChoice === computerChoice) {
+                resultOuput.innerHTML = "Het is gelijkspel!"    ;
+            }
+
+            else if (
+                (humanChoice === 'steen' && computerChoice === 'schaar') ||
+                (humanChoice === 'papier' && computerChoice === 'steen') ||
+                (humanChoice === 'schaar' && computerChoice === 'papier')) {
+                resultOuput.innerHTML = "Je hebt gewonnen!";
+            }
+
+            else {
+                resultOuput.innerHTML = "Je hebt verloren!";
+            }
+            
+        });
+
+        
+        papierBtn.addEventListener("click", function(event) {
+            humanChoice = event.target.id
+            humanOutput.innerHTML = humanChoice;
+            const randomNumber = Math.floor(Math.random() * 3) + 1;
+            if ( randomNumber === 1 ) {
+                computerChoice = 'steen';
+            }
+            if ( randomNumber === 2 ) {
+                computerChoice = 'schaar';
+            }
+            if ( randomNumber === 3 ) {
+                computerChoice = 'papier';
+            }
+            computerOutput.innerHTML = computerChoice;
+
+            if (humanChoice === computerChoice) {
+                resultOuput.innerHTML = "Het is gelijkspel!"    ;
+            }
+
+            else if (
+                (humanChoice === 'steen' && computerChoice === 'schaar') ||
+                (humanChoice === 'papier' && computerChoice === 'steen') ||
+                (humanChoice === 'schaar' && computerChoice === 'papier')) {
+                resultOuput.innerHTML = "Je hebt gewonnen!";
+            }
+
+            else {
+                resultOuput.innerHTML = "Je hebt verloren!";
+            }
+            
+        });
+
+        
+        schaarBtn.addEventListener("click", function(event) {
+            humanChoice = event.target.id
+            humanOutput.innerHTML = humanChoice;
+            const randomNumber = Math.floor(Math.random() * 3) + 1;
+            if ( randomNumber === 1 ) {
+                computerChoice = 'steen';
+            }
+            if ( randomNumber === 2 ) {
+                computerChoice = 'schaar';
+            }
+            if ( randomNumber === 3 ) {
+                computerChoice = 'papier';
+            }
+            computerOutput.innerHTML = computerChoice;
+
+            if (humanChoice === computerChoice) {
+                resultOuput.innerHTML = "Het is gelijkspel!"    ;
+            }
+
+            else if (
+                (humanChoice === 'steen' && computerChoice === 'schaar') ||
+                (humanChoice === 'papier' && computerChoice === 'steen') ||
+                (humanChoice === 'schaar' && computerChoice === 'papier')) {
+                resultOuput.innerHTML = "Je hebt gewonnen!";
+            }
+
+            else {
+                resultOuput.innerHTML = "Je hebt verloren!";
+            }
+            
+        });
+
+    </script>
+</body>
+
+</html>
