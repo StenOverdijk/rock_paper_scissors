@@ -77,6 +77,7 @@
         </h3>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.9.3/tsparticles.confetti.bundle.min.js"></script>
     <script>
         // Span elements
         const computerOutput = document.querySelector("#computer");
@@ -102,6 +103,48 @@
 
         // Initialize human output
         humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuze!";
+
+        const showConfetti = function () {
+            const count = 200,
+                defaults = {
+                    origin: { y: 0.7 },
+                };
+
+            function fire(particleRatio, opts) {
+                confetti(
+                    Object.assign({}, defaults, opts, {
+                        particleCount: Math.floor(count * particleRatio),
+                    })
+                );
+            }
+
+            fire(0.25, {
+                spread: 26,
+                startVelocity: 55,
+            });
+
+            fire(0.2, {
+                spread: 60,
+            });
+
+            fire(0.35, {
+                spread: 100,
+                decay: 0.91,
+                scalar: 0.8,
+            });
+
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 25,
+                decay: 0.92,
+                scalar: 1.2,
+            });
+
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 45,
+            });
+        }
 
         const humanMadeChoice = function (event) {
             humanChoice = event.target.id
@@ -151,6 +194,7 @@
                 loseStreak = 0;
                 winStreakOuput.innerHTML = winStreak;
                 loseStreakOutput.innerHTML = loseStreak;
+                showConfetti();
             }
 
             else {
