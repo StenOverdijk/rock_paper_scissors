@@ -33,11 +33,42 @@
         <button id="schaar" type="button">Schaar</button>
     </div>
 
+    <hr>
+    </hr>
+
+    <div>
+        <h1>Scorebord</h1>
+    </div>
+    <div>
+        <h2>
+            Wins:
+            <span id="humanWins"></span>
+        </h2>
+    </div>
+    <div>
+        <h2>
+            Computer wins:
+            <span id="computerWins"></span>
+        </h2>
+    </div>
+    <div>
+        <h2>
+            Gelijkspel:
+            <span id="draw"></span>
+        </h2>
+    </div>
+
     <script>
         // Span elements
         const computerOutput = document.querySelector("#computer");
         const humanOutput = document.querySelector("#human");
         const resultOuput = document.querySelector("#result");
+        let winCounter = 0;
+        let loseCounter = 0;
+        let drawCounter = 0;
+        const winCounterOutput = document.querySelector("#humanWins");
+        const loseCounterOutput = document.querySelector("#computerWins");
+        const drawCounterOutput = document.querySelector("#draw");
 
         // Button elements
         const btns = document.querySelectorAll("button");
@@ -49,11 +80,11 @@
         // Initialize human output
         humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuze!";
 
-        const humanMadeChoice = function(event) {
+        const humanMadeChoice = function (event) {
             humanChoice = event.target.id
             humanOutput.innerHTML = humanChoice;
             const randomNumber = Math.floor(Math.random() * 3) + 1;
-            switch(randomNumber) {
+            switch (randomNumber) {
                 case 1:
                     computerChoice = "steen";
                     break;
@@ -78,6 +109,8 @@
 
             if (humanChoice === computerChoice) {
                 resultOuput.innerHTML = "Het is gelijkspel!";
+                drawCounter++;
+                drawCounterOutput.innerHTML = drawCounter;
             }
 
             else if (
@@ -85,10 +118,14 @@
                 (humanChoice === 'papier' && computerChoice === 'steen') ||
                 (humanChoice === 'schaar' && computerChoice === 'papier')) {
                 resultOuput.innerHTML = "Je hebt gewonnen!";
+                winCounter++;
+                winCounterOutput.innerHTML = winCounter;
             }
 
             else {
                 resultOuput.innerHTML = "Je hebt verloren!";
+                loseCounter++;
+                loseCounterOutput.innerHTML = loseCounter;
             }
         }
 
