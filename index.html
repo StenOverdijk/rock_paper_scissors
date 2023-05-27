@@ -58,6 +58,25 @@
         </h2>
     </div>
 
+    <hr>
+    </hr>
+
+    <div>
+        <h1>Streaks</h1>
+    </div>
+    <div>
+        <h3>
+            win streak:
+            <span id="winStreak"></span>
+        </h3>
+    </div>
+    <div>
+        <h3>
+            Lose streak:
+            <span id="loseStreak"></span>
+        </h3>
+    </div>
+
     <script>
         // Span elements
         const computerOutput = document.querySelector("#computer");
@@ -69,6 +88,10 @@
         const winCounterOutput = document.querySelector("#humanWins");
         const loseCounterOutput = document.querySelector("#computerWins");
         const drawCounterOutput = document.querySelector("#draw");
+        let winStreak = 0;
+        let loseStreak = 0;
+        const winStreakOuput = document.querySelector("#winStreak");
+        const loseStreakOutput = document.querySelector("#loseStreak");
 
         // Button elements
         const btns = document.querySelectorAll("button");
@@ -111,6 +134,10 @@
                 resultOuput.innerHTML = "Het is gelijkspel!";
                 drawCounter++;
                 drawCounterOutput.innerHTML = drawCounter;
+                winStreak = 0;
+                LoseStreak = 0;
+                winStreakOuput.innerHTML = winStreak;
+                loseStreakOutput.innerHTML = loseStreak;
             }
 
             else if (
@@ -120,12 +147,20 @@
                 resultOuput.innerHTML = "Je hebt gewonnen!";
                 winCounter++;
                 winCounterOutput.innerHTML = winCounter;
+                winStreak++;
+                loseStreak = 0;
+                winStreakOuput.innerHTML = winStreak;
+                loseStreakOutput.innerHTML = loseStreak;
             }
 
             else {
                 resultOuput.innerHTML = "Je hebt verloren!";
                 loseCounter++;
                 loseCounterOutput.innerHTML = loseCounter;
+                winStreak = 0;
+                loseStreak++;
+                winStreakOuput.innerHTML = winStreak;
+                loseStreakOutput.innerHTML = loseStreak;
             }
         }
 
