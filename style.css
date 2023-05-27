@@ -1,0 +1,16 @@
+/* Cards */
+.card {
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.15);
+    border-color: blue;
+}
+
+.padding {
+    padding: 50px;
+  }
+
+  

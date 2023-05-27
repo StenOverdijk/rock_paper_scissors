@@ -5,84 +5,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Steen Papier Schaar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
 <body>
-    <div>
-        <h1>
-            Computer:
-            <span id="computer"></span>
-        </h1>
+    <div class="container-lg d-flex justify-content-center align-items-center">
+        <div class="col-sm-8">
+            <h1>
+                Computer:
+                <span id="computer"></span>
+            </h1>
+            <h1>
+                Jouw Keuze:
+                <span id="human"></span>
+            </h1>
+            <h1>
+                Uitkomst:
+                <span id="result"></span>
+            </h1>
+        </div>
     </div>
-    <div>
-        <h1>
-            Jouw Keuze:
-            <span id="human"></span>
-        </h1>
-    </div>
-    <div>
-        <h1>
-            Uitkomst:
-            <span id="result"></span>
-        </h1>
-    </div>
-    <div>
-        <button type="button">
-            <img id="steen" src="rock.png" width="200" alt="steen"/>
-        </button>
-        <button type="button">
-            <img id="papier" src="paper.png" width="200" alt="papier"/>
-        </button>
-        <button type="button">
-            <img id="schaar" src="scissors.png" width="200" alt="schaar"/>
-        </button>
+    
+    <hr/>
+
+    <div class="container-md justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-md-2 mx-auto">
+                <h1>Scorebord</h1>
+                <h2>
+                    Wins:
+                    <span id="humanWins"></span>
+                </h2>
+                <h2>
+                    Computer wins:
+                    <span id="computerWins"></span>
+                </h2>
+                <h2>
+                    Gelijkspel:
+                    <span id="draw"></span>
+                </h2>
+            </div>
+            <div class="col-md-2 mx-auto">
+                <h1>Streaks</h1>
+                <h3>
+                    win streak:
+                    <span id="winStreak"></span>
+                    
+                <h3>
+                    Lose streak:
+                    <span id="loseStreak"></span>
+                </h3>
+            </div>
+        </div>
     </div>
 
-    <hr>
-    </hr>
+    <hr/>
 
-    <div>
-        <h1>Scorebord</h1>
-    </div>
-    <div>
-        <h2>
-            Wins:
-            <span id="humanWins"></span>
-        </h2>
-    </div>
-    <div>
-        <h2>
-            Computer wins:
-            <span id="computerWins"></span>
-        </h2>
-    </div>
-    <div>
-        <h2>
-            Gelijkspel:
-            <span id="draw"></span>
-        </h2>
-    </div>
+    <div class="container-lg d-flex justify-content-center align-items-center pt-4 pb-5">
+        <div class="row">
+            <div class="col-sm-3 mx-auto">
+                <div class="card text-center h-100">
+                    <img class="card-img-top" src="rock.png" alt="Card image cap">
+                    <div class="card-body">
+                        <button id="steen" type="button" class="btn btn-primary">
+                            Steen
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    <hr>
-    </hr>
+            <div class="col-sm-3 mx-auto">
+                <div class="card text-center h-100">
+                    <img class="card-img-top padding" src="paper.png" alt="Card image cap">
+                    <div class="card-body">
+                        <button id="papier" type="button" class="btn btn-primary">
+                            Papier  
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    <div>
-        <h1>Streaks</h1>
+            <div class="col-sm-3 mx-auto">
+                <div class="card text-center h-100">
+                    <img class="card-img-top padding" src="scissors.png" alt="Card image cap">
+                    <div class="card-body">
+                        <button id="schaar" type="button" class="btn btn-primary">
+                            Schaar   
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <h3>
-            win streak:
-            <span id="winStreak"></span>
-        </h3>
-    </div>
-    <div>
-        <h3>
-            Lose streak:
-            <span id="loseStreak"></span>
-        </h3>
-    </div>
-
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.9.3/tsparticles.confetti.bundle.min.js"></script>
     <script>
         // Span elements
